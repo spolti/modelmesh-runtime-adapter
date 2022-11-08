@@ -19,23 +19,28 @@ import (
 	"os"
 
 	"github.com/kserve/modelmesh-runtime-adapter/internal/proto/mmesh"
-	"github.com/kserve/modelmesh-runtime-adapter/model-mesh-mlserver-adapter/server"
+	"github.com/kserve/modelmesh-runtime-adapter/model-mesh-torchserve-adapter/server"
 	"google.golang.org/grpc"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 )
 
 func main() {
-	log := zap.New(zap.UseDevMode(true)).WithName("MLServer Adapter")
+	log := zap.New(zap.UseDevMode(true)).WithName("TorchServe Adapter")
 
 	adapterConfig, err := server.GetAdapterConfigurationFromEnv(log)
 	if err != nil {
 		log.Error(err, "Error reading configuration")
 		os.Exit(1)
 	}
-	log.Info("Starting MLServer Adapter", "adapter_config", adapterConfig)
+	log.Info("Starting TorchServe Adapter", "adapter_config", adapterConfig)
 
-	MLServer := server.NewMLServerAdapterServer(adapterConfig.MLServerPort, adapterConfig, log)
-	defer MLServer.Conn.Close()
+	torchServer := server.NewTorchServeAdapterServer(adapterConfig, log)
+	defer torchServer.ManagementConn.Close()
+	defer func() {
+		if ic := torchServer.InferenceConn; ic != nil {
+			(*ic).Close()
+		}
+	}()
 
 	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", adapterConfig.Port))
 	if err != nil {
@@ -43,10 +48,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	log.Info("Adapter will run at port", "port", adapterConfig.Port, "MLServer port", adapterConfig.MLServerPort)
+	log.Info("Adapter will run at port", "port", adapterConfig.Port, "TorchServe port", adapterConfig.TorchServeManagementPort)
 
 	grpcServer := grpc.NewServer()
-	mmesh.RegisterModelRuntimeServer(grpcServer, MLServer)
+	mmesh.RegisterModelRuntimeServer(grpcServer, torchServer)
 	log.Info("Adapter gRPC Server registered, now serving")
 
 	if err = grpcServer.Serve(lis); err != nil {
