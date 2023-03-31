@@ -1,0 +1,6 @@
+# Version information
+upstream kserve modelmesh version: v0.11.0-alpha
+upstream modelmesh version: v0.11.0-alpha 
+upstream modelmesh-runtime-adapter version: v0.11.0-alpha 
+opendatahub version: latest (branch: main)
+opendatahub modelmesh-runtime-adapter branch: main

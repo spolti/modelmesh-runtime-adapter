@@ -115,6 +115,9 @@ RUN microdnf install \
 
 USER ${USER}
 
+# Add modelmesh version
+COPY version /etc/modelmesh-version
+
 # Copy over the binary and use it as the entrypoint
 COPY --from=build /opt/app/puller /opt/app/
 COPY --from=build /opt/app/triton-adapter /opt/app/
