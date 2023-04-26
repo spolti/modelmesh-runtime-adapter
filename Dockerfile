@@ -69,7 +69,6 @@ RUN git init && \
 # Download dependiencies before copying the source so they will be cached
 COPY go.mod go.sum ./
 RUN go mod download
-RUN go mod vendor
 
 
 ###############################################################################
