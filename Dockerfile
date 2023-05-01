@@ -69,7 +69,6 @@ RUN git init && \
 # Download dependiencies before copying the source so they will be cached
 COPY go.mod go.sum ./
 RUN go mod download
-RUN go mod vendor
 
 
 ###############################################################################
@@ -81,6 +80,9 @@ LABEL image="build"
 
 # Copy the source
 COPY . ./
+
+# Copy packages into vendor
+RUN go mod vendor
 
 # Build the binaries
 RUN go build -o puller model-serving-puller/main.go
