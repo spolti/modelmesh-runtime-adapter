@@ -48,6 +48,9 @@ type AdapterConfiguration struct {
 	BatchWaitTimeMin time.Duration
 	BatchWaitTimeMax time.Duration
 	ReloadTimeout    time.Duration
+
+	// (Xaenalt): Temporary workaround until OVMS can auto-detect Nvidia GPUs
+	OvmsForceTargetDevice string
 }
 
 type OvmsAdapterServer struct {
