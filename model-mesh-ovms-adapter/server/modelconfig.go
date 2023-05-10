@@ -40,8 +40,9 @@ type OvmsMultiModelRepositoryConfig struct {
 }
 
 type OvmsMultiModelModelConfig struct {
-	Name     string `json:"name"`
-	BasePath string `json:"base_path"`
+	Name         string `json:"name"`
+	BasePath     string `json:"base_path"`
+	TargetDevice string `json:"target_device"`
 }
 
 type OvmsMultiModelConfigListEntry struct {
