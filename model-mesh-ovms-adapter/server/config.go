@@ -59,6 +59,10 @@ const (
 	defaultBatchWaitTimeMax        = 3 * time.Second
 	reloadTimeout           string = "OVMS_RELOAD_TIMEOUT"
 	defaultReloadTimeout           = 30 * time.Second
+
+	// (Xaenalt): Temporary workaround until OVMS can auto-detect Nvidia GPUs
+	ovmsForceTargetDevice        string = "OVMS_FORCE_TARGET_DEVICE"
+	defaultOvmsForceTargetDevice        = "CPU"
 )
 
 func GetAdapterConfigurationFromEnv(log logr.Logger) (*AdapterConfiguration, error) {
@@ -94,5 +98,9 @@ func GetAdapterConfigurationFromEnv(log logr.Logger) (*AdapterConfiguration, err
 	if adapterConfig.ModelSizeMultiplier <= 0 {
 		return nil, fmt.Errorf("%s environment variable must be greater than 0, found value %v", modelSizeMultiplier, adapterConfig.ModelSizeMultiplier)
 	}
+
+	// (Xaenalt): Temporary workaround until OVMS can auto-detect Nvidia GPUs
+	adapterConfig.OvmsForceTargetDevice = GetEnvString(ovmsForceTargetDevice, defaultOvmsForceTargetDevice)
+
 	return adapterConfig, nil
 }
