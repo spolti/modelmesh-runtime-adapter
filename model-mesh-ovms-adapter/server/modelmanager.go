@@ -434,11 +434,24 @@ func (mm *OvmsModelManager) gatherLoadRequests() map[string]*request {
 					stopChan = time.NewTimer(mm.config.BatchWaitTimeMin).C
 				}
 
+				// (Xaenalt): Temporary workaround until OVMS's auto plugin can handle NVIDIA devices
+				adapterConfig, err := GetAdapterConfigurationFromEnv(mm.log)
+
+				var ovmsTargetDevice string
+
+				if err != nil {
+					mm.log.Error(err, "Could not get Adapter Configuration, defaulting to CPU inferencing")
+					ovmsTargetDevice = "CPU"
+				} else {
+					ovmsTargetDevice = adapterConfig.OvmsForceTargetDevice
+				}
+
 				requestMap[req.modelId] = req
 				mm.loadedModelsMap[req.modelId] = OvmsMultiModelConfigListEntry{
 					Config: OvmsMultiModelModelConfig{
-						Name:     req.modelId,
-						BasePath: req.basePath,
+						Name:         req.modelId,
+						BasePath:     req.basePath,
+						TargetDevice: ovmsTargetDevice,
 					},
 				}
 			}
