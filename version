@@ -1,4 +1,4 @@
 # Version information
-upstream kserve/modelmesh-runtime-adapter version: v0.11.0-rc0
+upstream kserve/modelmesh-runtime-adapter version: v0.11.0
 opendatahub version: latest
-opendatahub modelmesh-runtime-adapter branch: main
+opendatahub modelmesh-runtime-adapter branch: release-0.11
