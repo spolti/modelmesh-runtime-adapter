@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//	http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -62,7 +62,7 @@ const (
 
 	// (Xaenalt): Temporary workaround until OVMS can auto-detect Nvidia GPUs
 	ovmsForceTargetDevice        string = "OVMS_FORCE_TARGET_DEVICE"
-	defaultOvmsForceTargetDevice        = "CPU"
+	defaultOvmsForceTargetDevice string = "CPU"
 )
 
 func GetAdapterConfigurationFromEnv(log logr.Logger) (*AdapterConfiguration, error) {
