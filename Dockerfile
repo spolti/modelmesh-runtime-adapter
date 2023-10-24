@@ -94,7 +94,7 @@ RUN go build -o torchserve-adapter model-mesh-torchserve-adapter/main.go
 ###############################################################################
 # Stage 3: Copy build assets to create the smallest final runtime image
 ###############################################################################
-FROM  registry.access.redhat.com/ubi8/ubi-minimal:8.4 as runtime
+FROM registry.access.redhat.com/ubi8/ubi-minimal:8.8 as runtime
 
 ARG IMAGE_VERSION
 ARG COMMIT_SHA
