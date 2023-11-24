@@ -11,7 +11,7 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.#
+# limitations under the License.
 
 USAGE="$(
   cat <<EOF
@@ -29,6 +29,8 @@ usage() {
   exit 1
 }
 
+DOCKER_USER=${DOCKER_USER:-"kserve"}
+IMAGE_TAG=${IMAGE_TAG:-"latest"}
 DOCKER_TARGET="runtime"
 DOCKER_TAG="$(git rev-parse --abbrev-ref HEAD)-$(date +"%Y%m%dT%H%M%S%Z")"
 
@@ -37,6 +39,10 @@ while (("$#")); do
   case $arg in
   -h | --help)
     usage
+    ;;
+  --use-existing)
+    use_existing=true
+    shift 1
     ;;
   -t | --target)
     if [ -n "$2" ] && [ "${2:0:1}" != "-" ]; then
@@ -65,7 +71,7 @@ done
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-cd "$DIR/.." ||
+cd "$DIR/.."
 
 IMAGE_SUFFIX=""
 
@@ -73,10 +79,18 @@ if [ "${DOCKER_TARGET}" != "runtime" ]; then
   IMAGE_SUFFIX="-${DOCKER_TARGET}"
 fi
 
+if [[ $use_existing == "true" ]]; then
+  DOCKER_IMAGE="${DOCKER_USER}/modelmesh-runtime-adapter${IMAGE_SUFFIX}:${IMAGE_TAG}"
+  if docker image inspect "${DOCKER_IMAGE}" >/dev/null 2>&1; then
+    echo "Using existing image: ${DOCKER_IMAGE}"
+    exit 0
+  fi
+fi
+
 declare -a docker_args=(
   --target "${DOCKER_TARGET}"
-  -t "kserve/modelmesh-runtime-adapter${IMAGE_SUFFIX}:${DOCKER_TAG}"
-  -t "kserve/modelmesh-runtime-adapter${IMAGE_SUFFIX}:latest"
+  -t "${DOCKER_USER}/modelmesh-runtime-adapter${IMAGE_SUFFIX}:${DOCKER_TAG}"
+  -t "${DOCKER_USER}/modelmesh-runtime-adapter${IMAGE_SUFFIX}:${IMAGE_TAG}"
 )
 
 if [[ $DOCKER_TARGET == 'runtime' ]]; then
