@@ -15,7 +15,7 @@
 ###############################################################################
 # Stage 1: Create the developer image for the BUILDPLATFORM only
 ###############################################################################
-ARG GOLANG_VERSION=1.17
+ARG GOLANG_VERSION=1.19
 FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi8/go-toolset:$GOLANG_VERSION AS develop
 
 ARG PROTOC_VERSION=21.5
@@ -24,17 +24,19 @@ USER root
 ENV HOME=/root
 
 # Install build and dev tools
+# NOTE: Require python38 to install pre-commit
 RUN --mount=type=cache,target=/root/.cache/dnf:rw \
     dnf install --setopt=cachedir=/root/.cache/dnf -y --nodocs \
-        python3 \
-        python3-pip \
         nodejs \
+        python38 \
+    && ln -sf /usr/bin/python3 /usr/bin/python \
+    && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && true
 
 # Install pre-commit
 ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install pre-commit
+    pip install pre-commit
 
 # When using the BuildKit backend, Docker predefines a set of ARG variables with
 # information on the platform of the node performing the build (build platform)
@@ -77,9 +79,13 @@ WORKDIR /opt/app
 COPY go.mod go.sum ./
 
 # Install go protoc plugins
+# no required module provides package google.golang.org/grpc/cmd/protoc-gen-go-grpc
+# to add it run `go get google.golang.org/grpc/cmd/protoc-gen-go-grpc`
 ENV PATH $HOME/go/bin:$PATH
-RUN go get google.golang.org/protobuf/cmd/protoc-gen-go \
-           google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+RUN true \
+    && go get google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+    && go install google.golang.org/protobuf/cmd/protoc-gen-go \
+                  google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     && protoc-gen-go --version \
     && true
 
@@ -87,6 +93,8 @@ RUN go get google.golang.org/protobuf/cmd/protoc-gen-go \
 COPY .pre-commit-config.yaml ./
 RUN git init && \
     pre-commit install-hooks && \
+    # Fix: 'fatal: detected dubious ownership in repository' \
+    git config --global --add safe.directory "*" && \
     rm -rf .git
 
 # Download dependencies before copying the source so they will be cached
