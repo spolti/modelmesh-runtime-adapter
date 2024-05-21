@@ -11,6 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 package server
 
 import (
@@ -81,8 +82,8 @@ func GetAdapterConfigurationFromEnv(log logr.Logger) (*AdapterConfiguration, err
 		return nil, fmt.Errorf("Could not construct torchserve model store path: %w", err)
 	}
 
-	adapterConfig.RequestBatchSize = int32(GetEnvInt(requestBatchSize, defaultRequestBatchSize, log))
-	adapterConfig.MaxBatchDelaySecs = int32(GetEnvInt(maxBatchDelaySecs, defaultMaxBatchDelaySecs, log))
+	adapterConfig.RequestBatchSize = GetEnvInt32(requestBatchSize, defaultRequestBatchSize, log)
+	adapterConfig.MaxBatchDelaySecs = GetEnvInt32(maxBatchDelaySecs, defaultMaxBatchDelaySecs, log)
 
 	if adapterConfig.TorchServeContainerMemReqBytes < 0 {
 		return nil, fmt.Errorf("%s environment variable must be set to a positive integer, found value %v",
