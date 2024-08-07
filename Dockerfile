@@ -117,15 +117,15 @@ COPY . ./
 # https://docs.docker.com/engine/reference/builder/#automatic-platform-args-in-the-global-scope
 # don't provide "default" values (e.g. 'ARG TARGETARCH=amd64') for non-buildx environments,
 # see https://github.com/docker/buildx/issues/510
-ARG TARGETOS
-ARG TARGETARCH
+ARG TARGETOS=amd64
+ARG TARGETARCH=linux
 
 # Build the binaries using native go compiler from BUILDPLATFORM but compiled output for TARGETPLATFORM
 # https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
 RUN --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/go/pkg \
-    export GOOS=${TARGETOS:-linux} && \
-    export GOARCH=${TARGETARCH:-amd64} && \
+    export GOOS=linux && \
+    export GOARCH=amd64 && \
     go build -o puller model-serving-puller/main.go && \
     go build -o triton-adapter model-mesh-triton-adapter/main.go && \
     go build -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
