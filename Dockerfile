@@ -123,10 +123,10 @@ ARG TARGETARCH=linux
 
 # Build the binaries using native go compiler from BUILDPLATFORM but compiled output for TARGETPLATFORM
 # https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
-RUN --mount=type=cache,target=/root/.cache/go-build \
-    --mount=type=cache,target=/go/pkg \
-    export GOOS=linux && \
-    export GOARCH=amd64 && \
+RUN export GOCACHE=/cachi2/output/deps/gomod
+    export GOMODCACHE=/cachi2/output/deps/gomod/pkg/mod
+    export GOPATH=/cachi2/output/deps/gomod
+    export GOPROXY=file:///cachi2/output/deps/gomod/pkg/mod/cache/download
     go build -o puller model-serving-puller/main.go && \
     go build -o triton-adapter model-mesh-triton-adapter/main.go && \
     go build -o mlserver-adapter model-mesh-mlserver-adapter/main.go && \
