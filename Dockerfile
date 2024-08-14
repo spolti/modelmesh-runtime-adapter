@@ -154,7 +154,7 @@ USER root
 #     python38 \
 #     python38-devel \
 #     nodejs \
-RUN microdnf install -setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
+RUN microdnf install --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
     gcc \
     gcc-c++ \
     python38 \
