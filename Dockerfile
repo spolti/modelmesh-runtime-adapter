@@ -148,8 +148,13 @@ USER root
 #        python38 \
 
 # Install packages with modular metadata workaround
-RUN microdnf install --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
-    gcc \
+# RUN microdnf install --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
+#     gcc \
+#     gcc-c++ \
+#     python38 \
+#     python38-devel \
+#     nodejs \
+RUN microdnf install gcc \
     gcc-c++ \
     python38 \
     python38-devel \
