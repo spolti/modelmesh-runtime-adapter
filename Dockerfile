@@ -141,11 +141,19 @@ USER root
 # install python to convert keras to tf
 # NOTE: tensorflow not supported on PowerPC (ppc64le) or System Z (s390x) https://github.com/tensorflow/tensorflow/issues/46181
 #--mount=type=cache,target=/root/.cache/microdnf:rw \
-RUN microdnf install --setopt=cachedir=/root/.cache/microdnf \
-       gcc \
-       gcc-c++ \
-       python38-devel \
-       python38 \
+# RUN microdnf install --setopt=cachedir=/root/.cache/microdnf \
+#        gcc \
+#        gcc-c++ \
+#        python38-devel \
+#        python38 \
+
+# Install packages with modular metadata workaround
+RUN microdnf install --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
+    gcc \
+    gcc-c++ \
+    python38 \
+    python38-devel \
+    nodejs \
     && ln -sf /usr/bin/python3 /usr/bin/python \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && true
