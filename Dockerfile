@@ -171,7 +171,8 @@ COPY requirements.txt requirements.txt
 ENV PIP_CACHE_DIR=/root/.cache/pip
 ##--mount=type=cache,target=/root/.cache/pip \
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install pybuild-deps
+#pip install -r requirements.txt
 # pip install wheel && \
 #pip install grpcio && \
 #pip install tensorflow
