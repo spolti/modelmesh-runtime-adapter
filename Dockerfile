@@ -164,14 +164,17 @@ RUN microdnf install --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && true
 
+COPY requirements.txt requirements.txt
+
 # need to upgrade pip and install wheel before installing grpcio, before installing tensorflow on aarch64
 # use caching to speed up multi-platform builds
 ENV PIP_CACHE_DIR=/root/.cache/pip
 ##--mount=type=cache,target=/root/.cache/pip \
 RUN pip install --upgrade pip && \
-    pip install wheel && \
-    pip install grpcio && \
-    pip install tensorflow
+    pip install -r requirements.txt
+# pip install wheel && \
+#pip install grpcio && \
+#pip install tensorflow
 
 USER ${USER}
 
