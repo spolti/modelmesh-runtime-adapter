@@ -97,11 +97,15 @@ COPY --from=build /opt/app/torchserve-adapter /opt/app/
 ARG IMAGE_VERSION
 ARG COMMIT_SHA
 
-LABEL name="model-serving-runtime-adapter" \
-      version="${IMAGE_VERSION}" \
-      release="${COMMIT_SHA}" \
-      summary="Sidecar container which runs in the ModelMesh Serving model server pods" \
-      description="Container which runs in each model serving pod acting as an intermediary between ModelMesh and third-party model-server containers"
+LABEL com.redhat.component="odh-modelmesh-runtime-adapter-container" \
+      name="managed-open-data-hub/odh-modelmesh-runtime-adapter-container-rhel8" \
+      description="Container which runs in each model serving pod and act as an intermediary between model-mesh and third-party model-server containers" \
+      summary="odh-model-serving-runtime-adapter" \
+      maintainer="['managed-open-data-hub@redhat.com']" \
+      io.k8s.display-name="odh-model-serving-runtime-adapter" \
+      io.k8s.description="odh-model-serving-runtime-adapter" \
+      com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
+
 
 # Don't define an entrypoint. This is a multi-purpose image so the user should specify which binary they want to run (e.g. /opt/app/puller or /opt/app/triton-adapter)
 ENTRYPOINT ["/opt/app/puller"]
