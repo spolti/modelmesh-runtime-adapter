@@ -1,10 +1,10 @@
 
-ARG BUILD_BASE=develop
+#ARG BUILD_BASE=develop
 
 #go-1.21
 FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi8/go-toolset@sha256:4ec05fd5b355106cc0d990021a05b71bbfb9231e4f5bdc0c5316515edf6a1c96 AS build
 
-FROM --platform=$BUILDPLATFORM $BUILD_BASE AS build
+#FROM --platform=$BUILDPLATFORM $BUILD_BASE AS build
 
 LABEL image="build"
 
