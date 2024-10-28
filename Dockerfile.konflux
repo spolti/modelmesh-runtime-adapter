@@ -62,7 +62,8 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
 COPY requirements.txt requirements.txt
 ENV PIP_CACHE_DIR=/root/.cache/pip
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install -r requirements.txt
+   #pip install -r requirements.txt
+    pip install --no-binary requirements.txt
 RUN rm -rfv requirements.txt
 USER ${USER}
 
