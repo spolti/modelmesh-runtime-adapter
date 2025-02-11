@@ -151,13 +151,13 @@ arches:
     name: glibc-headers
     evr: 2.28-251.el8_10.11
     sourcerpm: glibc-2.28-251.el8_10.11.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.37.1.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.40.1.el8_10.x86_64.rpm
     repoid: ubi-8-baseos-rpms
-    size: 12399612
-    checksum: sha256:0bc0963aafe2bae489e0677f4d3715e43a17bb95db11989911f2beafae3eb6fb
+    size: 12400724
+    checksum: sha256:03235a80cf900382456a3e74f26fdfddc14ad354cbd8aea49d501f06c1f72de0
     name: kernel-headers
-    evr: 4.18.0-553.37.1.el8_10
-    sourcerpm: kernel-4.18.0-553.37.1.el8_10.src.rpm
+    evr: 4.18.0-553.40.1.el8_10
+    sourcerpm: kernel-4.18.0-553.40.1.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-22.el8_10.x86_64.rpm
     repoid: ubi-8-baseos-rpms
     size: 213196
