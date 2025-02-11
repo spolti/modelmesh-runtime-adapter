@@ -4,27 +4,27 @@ lockfileVendor: redhat
 arches:
 - arch: x86_64
   packages:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/c/cpp-8.5.0-22.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/c/cpp-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-appstream-rpms
-    size: 10923404
-    checksum: sha256:8376018e552fa4544c3d10af14be5a80c962494aae4dd538848b9546ef392a98
+    size: 10943208
+    checksum: sha256:c4e120d1efabc4a04f9a94b483028ec3a1fe4d8182f2752c94b5947d6a9eb3c7
     name: cpp
-    evr: 8.5.0-22.el8_10
-    sourcerpm: gcc-8.5.0-22.el8_10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/g/gcc-8.5.0-22.el8_10.x86_64.rpm
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/g/gcc-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-appstream-rpms
-    size: 24572708
-    checksum: sha256:4d283a39969e559c70a93e26d9393e6ec0db39399595deec995f21e277c4c7b2
+    size: 24588672
+    checksum: sha256:1d0ff043c389ba6162b561f0e0a5f8470888e7a2e279bdd238ed7d93958f9aff
     name: gcc
-    evr: 8.5.0-22.el8_10
-    sourcerpm: gcc-8.5.0-22.el8_10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/g/gcc-c++-8.5.0-22.el8_10.x86_64.rpm
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/g/gcc-c++-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-appstream-rpms
-    size: 12855236
-    checksum: sha256:497393dddea700464604c6db66eaadc56d73161a1631d34fec6f0f52d4ad0a9d
+    size: 12873196
+    checksum: sha256:b3f352b1f4f45164cd18c1179ee533ce45592b4fcfef35bac06b6cb9c402b409
     name: gcc-c++
-    evr: 8.5.0-22.el8_10
-    sourcerpm: gcc-8.5.0-22.el8_10.src.rpm
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/i/isl-0.16.1-6.el8.x86_64.rpm
     repoid: ubi-8-appstream-rpms
     size: 861300
@@ -39,13 +39,13 @@ arches:
     name: libmpc
     evr: 1.1.0-9.1.el8
     sourcerpm: libmpc-1.1.0-9.1.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/l/libstdc++-devel-8.5.0-22.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/l/libstdc++-devel-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-appstream-rpms
-    size: 2151724
-    checksum: sha256:0ebaa9bca285fb80a8656a9c5f35f459243774b01b8ed76f29b6a9c74b1af1d9
+    size: 2151804
+    checksum: sha256:6a3b22a5e6a8dbf6bcf4761d7d73cacbaed626ab82bd2e4276d8188a32c07643
     name: libstdc++-devel
-    evr: 8.5.0-22.el8_10
-    sourcerpm: gcc-8.5.0-22.el8_10.src.rpm
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/Packages/n/nodejs-10.24.0-1.module+el8.3.0+10166+b07ac28e.x86_64.rpm
     repoid: ubi-8-appstream-rpms
     size: 9278831
@@ -158,13 +158,20 @@ arches:
     name: kernel-headers
     evr: 4.18.0-553.40.1.el8_10
     sourcerpm: kernel-4.18.0-553.40.1.el8_10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-22.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgcc-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-baseos-rpms
-    size: 213196
-    checksum: sha256:87e721009e53e5f1b1d6c1ff2f3c1cc07a68dd43e896cfda1e96cd49949145be
+    size: 83732
+    checksum: sha256:a75cc2dfa4cdadccc043059319a576914f1d744400393effb7ce2f5bf3b7bf52
+    name: libgcc
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-23.el8_10.x86_64.rpm
+    repoid: ubi-8-baseos-rpms
+    size: 213352
+    checksum: sha256:f4f2387ac493ff857c5785afed9cb32f13efc263971e8057d3239df1f1666a3d
     name: libgomp
-    evr: 8.5.0-22.el8_10
-    sourcerpm: gcc-8.5.0-22.el8_10.src.rpm
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libnsl2-1.2.0-2.20180605git4a062cf.el8.x86_64.rpm
     repoid: ubi-8-baseos-rpms
     size: 59120
@@ -179,6 +186,13 @@ arches:
     name: libpkgconf
     evr: 1.4.2-1.el8
     sourcerpm: pkgconf-1.4.2-1.el8.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libstdc++-8.5.0-23.el8_10.x86_64.rpm
+    repoid: ubi-8-baseos-rpms
+    size: 465988
+    checksum: sha256:5c07bec37c9dab29b5b3fd85f29a20e9db378838fc8e24b48baccd872f76de9e
+    name: libstdc++
+    evr: 8.5.0-23.el8_10
+    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libtirpc-1.1.4-12.el8_10.x86_64.rpm
     repoid: ubi-8-baseos-rpms
     size: 116808
@@ -216,7 +230,7 @@ arches:
     sourcerpm: pkgconf-1.4.2-1.el8.src.rpm
   source: []
   module_metadata:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/805d2ed253f289623d87e32d2ba9ca78b110820e59b36e1167ac5c80831dd749-modules.yaml.gz
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/repodata/32900aa7fa655b32bbd5f656b278952882350a953bc02c0ab44b48866f2cf443-modules.yaml.gz
     repoid: ubi-8-appstream-rpms
     size: 60017
-    checksum: sha256:805d2ed253f289623d87e32d2ba9ca78b110820e59b36e1167ac5c80831dd749
+    checksum: sha256:32900aa7fa655b32bbd5f656b278952882350a953bc02c0ab44b48866f2cf443
