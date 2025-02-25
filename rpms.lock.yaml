@@ -186,13 +186,6 @@ arches:
     name: kernel-headers
     evr: 4.18.0-553.40.1.el8_10
     sourcerpm: kernel-4.18.0-553.40.1.el8_10.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgcc-8.5.0-23.el8_10.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 83732
-    checksum: sha256:a75cc2dfa4cdadccc043059319a576914f1d744400393effb7ce2f5bf3b7bf52
-    name: libgcc
-    evr: 8.5.0-23.el8_10
-    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libgomp-8.5.0-23.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 213352
@@ -214,13 +207,6 @@ arches:
     name: libpkgconf
     evr: 1.4.2-1.el8
     sourcerpm: pkgconf-1.4.2-1.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libstdc++-8.5.0-23.el8_10.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 465988
-    checksum: sha256:5c07bec37c9dab29b5b3fd85f29a20e9db378838fc8e24b48baccd872f76de9e
-    name: libstdc++
-    evr: 8.5.0-23.el8_10
-    sourcerpm: gcc-8.5.0-23.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/l/libtirpc-1.1.4-12.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 116808
