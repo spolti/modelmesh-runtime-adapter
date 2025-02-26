@@ -51,8 +51,9 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
     microdnf install --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
        gcc \
        gcc-c++ \
-       python38-devel \
-       python38 \
+       python3.11-devel \
+       python3.11 \
+       python3.11-pip \
     && ln -sf /usr/bin/python3 /usr/bin/python \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && true
