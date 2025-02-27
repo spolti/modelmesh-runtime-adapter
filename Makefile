@@ -15,9 +15,6 @@
 # make builder configurable, default to docker.
 ENGINE ?= docker
 
-# make builder configurable, default to docker.
-ENGINE ?= docker
-
 # collect args from `make run` so that they don't run twice
 ifeq (run,$(firstword $(MAKECMDGOALS)))
   RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
@@ -33,7 +30,7 @@ all: build
 .PHONY: build
 ## Build runtime container image
 build:
-	ENGINE=${ENGINE} && ./scripts/build_docker.sh --target builder --target runtime
+	ENGINE=${ENGINE} && ./scripts/build_docker.sh --target runtime
 
 .PHONY: build.develop
 ## Build developer container image
