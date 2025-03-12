@@ -46,11 +46,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//@@
-//@@.. cpp:var:: message ServerLiveRequest
-//@@
-//@@   Request message for ServerLive.
-//@@
+// @@
+// @@.. cpp:var:: message ServerLiveRequest
+// @@
+// @@   Request message for ServerLive.
+// @@
 type ServerLiveRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -89,11 +89,11 @@ func (*ServerLiveRequest) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{0}
 }
 
-//@@
-//@@.. cpp:var:: message ServerLiveResponse
-//@@
-//@@   Response message for ServerLive.
-//@@
+// @@
+// @@.. cpp:var:: message ServerLiveResponse
+// @@
+// @@   Response message for ServerLive.
+// @@
 type ServerLiveResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -146,11 +146,11 @@ func (x *ServerLiveResponse) GetLive() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message ServerReadyRequest
-//@@
-//@@   Request message for ServerReady.
-//@@
+// @@
+// @@.. cpp:var:: message ServerReadyRequest
+// @@
+// @@   Request message for ServerReady.
+// @@
 type ServerReadyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -189,11 +189,11 @@ func (*ServerReadyRequest) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{2}
 }
 
-//@@
-//@@.. cpp:var:: message ServerReadyResponse
-//@@
-//@@   Response message for ServerReady.
-//@@
+// @@
+// @@.. cpp:var:: message ServerReadyResponse
+// @@
+// @@   Response message for ServerReady.
+// @@
 type ServerReadyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -246,11 +246,11 @@ func (x *ServerReadyResponse) GetReady() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message ModelReadyRequest
-//@@
-//@@   Request message for ModelReady.
-//@@
+// @@
+// @@.. cpp:var:: message ModelReadyRequest
+// @@
+// @@   Request message for ModelReady.
+// @@
 type ModelReadyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -316,11 +316,11 @@ func (x *ModelReadyRequest) GetVersion() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message ModelReadyResponse
-//@@
-//@@   Response message for ModelReady.
-//@@
+// @@
+// @@.. cpp:var:: message ModelReadyResponse
+// @@
+// @@   Response message for ModelReady.
+// @@
 type ModelReadyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -373,11 +373,11 @@ func (x *ModelReadyResponse) GetReady() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message ServerMetadataRequest
-//@@
-//@@   Request message for ServerMetadata.
-//@@
+// @@
+// @@.. cpp:var:: message ServerMetadataRequest
+// @@
+// @@   Request message for ServerMetadata.
+// @@
 type ServerMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -416,11 +416,11 @@ func (*ServerMetadataRequest) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{6}
 }
 
-//@@
-//@@.. cpp:var:: message ServerMetadataResponse
-//@@
-//@@   Response message for ServerMetadata.
-//@@
+// @@
+// @@.. cpp:var:: message ServerMetadataResponse
+// @@
+// @@   Response message for ServerMetadata.
+// @@
 type ServerMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -499,11 +499,11 @@ func (x *ServerMetadataResponse) GetExtensions() []string {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelMetadataRequest
-//@@
-//@@   Request message for ModelMetadata.
-//@@
+// @@
+// @@.. cpp:var:: message ModelMetadataRequest
+// @@
+// @@   Request message for ModelMetadata.
+// @@
 type ModelMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -570,11 +570,11 @@ func (x *ModelMetadataRequest) GetVersion() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message ModelMetadataResponse
-//@@
-//@@   Response message for ModelMetadata.
-//@@
+// @@
+// @@.. cpp:var:: message ModelMetadataResponse
+// @@
+// @@   Response message for ModelMetadata.
+// @@
 type ModelMetadataResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -679,11 +679,11 @@ func (x *ModelMetadataResponse) GetOutputs() []*ModelMetadataResponse_TensorMeta
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message InferParameter
-//@@
-//@@   An inference parameter value.
-//@@
+// @@
+// @@.. cpp:var:: message InferParameter
+// @@
+// @@   An inference parameter value.
+// @@
 type InferParameter struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -796,13 +796,13 @@ func (*InferParameter_Int64Param) isInferParameter_ParameterChoice() {}
 
 func (*InferParameter_StringParam) isInferParameter_ParameterChoice() {}
 
-//@@
-//@@.. cpp:var:: message InferTensorContents
-//@@
-//@@   The data contained in a tensor represented by the repeated type
-//@@   that matches the tensor's data type. Protobuf oneof is not used
-//@@   because oneofs cannot contain repeated fields.
-//@@
+// @@
+// @@.. cpp:var:: message InferTensorContents
+// @@
+// @@   The data contained in a tensor represented by the repeated type
+// @@   that matches the tensor's data type. Protobuf oneof is not used
+// @@   because oneofs cannot contain repeated fields.
+// @@
 type InferTensorContents struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -964,11 +964,11 @@ func (x *InferTensorContents) GetByteContents() [][]byte {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelInferRequest
-//@@
-//@@   Request message for ModelInfer.
-//@@
+// @@
+// @@.. cpp:var:: message ModelInferRequest
+// @@
+// @@   Request message for ModelInfer.
+// @@
 type ModelInferRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1117,11 +1117,11 @@ func (x *ModelInferRequest) GetRawInputContents() [][]byte {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelInferResponse
-//@@
-//@@   Response message for ModelInfer.
-//@@
+// @@
+// @@.. cpp:var:: message ModelInferResponse
+// @@
+// @@   Response message for ModelInfer.
+// @@
 type ModelInferResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1253,11 +1253,11 @@ func (x *ModelInferResponse) GetRawOutputContents() [][]byte {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelStreamInferResponse
-//@@
-//@@   Response message for ModelStreamInfer.
-//@@
+// @@
+// @@.. cpp:var:: message ModelStreamInferResponse
+// @@
+// @@   Response message for ModelStreamInfer.
+// @@
 type ModelStreamInferResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1324,11 +1324,11 @@ func (x *ModelStreamInferResponse) GetInferResponse() *ModelInferResponse {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelConfigRequest
-//@@
-//@@   Request message for ModelConfig.
-//@@
+// @@
+// @@.. cpp:var:: message ModelConfigRequest
+// @@
+// @@   Request message for ModelConfig.
+// @@
 type ModelConfigRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1394,11 +1394,11 @@ func (x *ModelConfigRequest) GetVersion() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message ModelConfigResponse
-//@@
-//@@   Response message for ModelConfig.
-//@@
+// @@
+// @@.. cpp:var:: message ModelConfigResponse
+// @@
+// @@   Response message for ModelConfig.
+// @@
 type ModelConfigResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1451,11 +1451,11 @@ func (x *ModelConfigResponse) GetConfig() *ModelConfig {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelStatisticsRequest
-//@@
-//@@   Request message for ModelStatistics.
-//@@
+// @@
+// @@.. cpp:var:: message ModelStatisticsRequest
+// @@
+// @@   Request message for ModelStatistics.
+// @@
 type ModelStatisticsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1521,11 +1521,11 @@ func (x *ModelStatisticsRequest) GetVersion() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message StatisticDuration
-//@@
-//@@   Statistic recording a cumulative duration metric.
-//@@
+// @@
+// @@.. cpp:var:: message StatisticDuration
+// @@
+// @@   Statistic recording a cumulative duration metric.
+// @@
 type StatisticDuration struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1589,11 +1589,11 @@ func (x *StatisticDuration) GetNs() uint64 {
 	return 0
 }
 
-//@@
-//@@.. cpp:var:: message InferStatistics
-//@@
-//@@   Inference statistics.
-//@@
+// @@
+// @@.. cpp:var:: message InferStatistics
+// @@
+// @@   Inference statistics.
+// @@
 type InferStatistics struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1712,11 +1712,11 @@ func (x *InferStatistics) GetComputeOutput() *StatisticDuration {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message InferBatchStatistics
-//@@
-//@@   Inference batch statistics.
-//@@
+// @@
+// @@.. cpp:var:: message InferBatchStatistics
+// @@
+// @@   Inference batch statistics.
+// @@
 type InferBatchStatistics struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1811,11 +1811,11 @@ func (x *InferBatchStatistics) GetComputeOutput() *StatisticDuration {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelStatistics
-//@@
-//@@   Statistics for a specific model and version.
-//@@
+// @@
+// @@.. cpp:var:: message ModelStatistics
+// @@
+// @@   Statistics for a specific model and version.
+// @@
 type ModelStatistics struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1958,11 +1958,11 @@ func (x *ModelStatistics) GetBatchStats() []*InferBatchStatistics {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelStatisticsResponse
-//@@
-//@@   Response message for ModelStatistics.
-//@@
+// @@
+// @@.. cpp:var:: message ModelStatisticsResponse
+// @@
+// @@   Response message for ModelStatistics.
+// @@
 type ModelStatisticsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2014,11 +2014,11 @@ func (x *ModelStatisticsResponse) GetModelStats() []*ModelStatistics {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryIndexRequest
-//@@
-//@@   Request message for RepositoryIndex.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryIndexRequest
+// @@
+// @@   Request message for RepositoryIndex.
+// @@
 type RepositoryIndexRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2083,11 +2083,11 @@ func (x *RepositoryIndexRequest) GetReady() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryIndexResponse
-//@@
-//@@   Response message for RepositoryIndex.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryIndexResponse
+// @@
+// @@   Response message for RepositoryIndex.
+// @@
 type RepositoryIndexResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2140,11 +2140,11 @@ func (x *RepositoryIndexResponse) GetModels() []*RepositoryIndexResponse_ModelIn
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryModelLoadRequest
-//@@
-//@@   Request message for RepositoryModelLoad.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryModelLoadRequest
+// @@
+// @@   Request message for RepositoryModelLoad.
+// @@
 type RepositoryModelLoadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2209,11 +2209,11 @@ func (x *RepositoryModelLoadRequest) GetModelName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryModelLoadResponse
-//@@
-//@@   Response message for RepositoryModelLoad.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryModelLoadResponse
+// @@
+// @@   Response message for RepositoryModelLoad.
+// @@
 type RepositoryModelLoadResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2252,11 +2252,11 @@ func (*RepositoryModelLoadResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{26}
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryModelUnloadRequest
-//@@
-//@@   Request message for RepositoryModelUnload.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryModelUnloadRequest
+// @@
+// @@   Request message for RepositoryModelUnload.
+// @@
 type RepositoryModelUnloadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2321,11 +2321,11 @@ func (x *RepositoryModelUnloadRequest) GetModelName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message RepositoryModelUnloadResponse
-//@@
-//@@   Response message for RepositoryModelUnload.
-//@@
+// @@
+// @@.. cpp:var:: message RepositoryModelUnloadResponse
+// @@
+// @@   Response message for RepositoryModelUnload.
+// @@
 type RepositoryModelUnloadResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2364,11 +2364,11 @@ func (*RepositoryModelUnloadResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{28}
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryStatusRequest
-//@@
-//@@   Request message for SystemSharedMemoryStatus.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryStatusRequest
+// @@
+// @@   Request message for SystemSharedMemoryStatus.
+// @@
 type SystemSharedMemoryStatusRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2422,11 +2422,11 @@ func (x *SystemSharedMemoryStatusRequest) GetName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryStatusResponse
-//@@
-//@@   Response message for SystemSharedMemoryStatus.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryStatusResponse
+// @@
+// @@   Response message for SystemSharedMemoryStatus.
+// @@
 type SystemSharedMemoryStatusResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2480,11 +2480,11 @@ func (x *SystemSharedMemoryStatusResponse) GetRegions() map[string]*SystemShared
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryRegisterRequest
-//@@
-//@@   Request message for SystemSharedMemoryRegister.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryRegisterRequest
+// @@
+// @@   Request message for SystemSharedMemoryRegister.
+// @@
 type SystemSharedMemoryRegisterRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2575,11 +2575,11 @@ func (x *SystemSharedMemoryRegisterRequest) GetByteSize() uint64 {
 	return 0
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryRegisterResponse
-//@@
-//@@   Response message for SystemSharedMemoryRegister.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryRegisterResponse
+// @@
+// @@   Response message for SystemSharedMemoryRegister.
+// @@
 type SystemSharedMemoryRegisterResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2618,11 +2618,11 @@ func (*SystemSharedMemoryRegisterResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{32}
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryUnregisterRequest
-//@@
-//@@   Request message for SystemSharedMemoryUnregister.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryUnregisterRequest
+// @@
+// @@   Request message for SystemSharedMemoryUnregister.
+// @@
 type SystemSharedMemoryUnregisterRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2676,11 +2676,11 @@ func (x *SystemSharedMemoryUnregisterRequest) GetName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message SystemSharedMemoryUnregisterResponse
-//@@
-//@@   Response message for SystemSharedMemoryUnregister.
-//@@
+// @@
+// @@.. cpp:var:: message SystemSharedMemoryUnregisterResponse
+// @@
+// @@   Response message for SystemSharedMemoryUnregister.
+// @@
 type SystemSharedMemoryUnregisterResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2719,11 +2719,11 @@ func (*SystemSharedMemoryUnregisterResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{34}
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryStatusRequest
-//@@
-//@@   Request message for CudaSharedMemoryStatus.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryStatusRequest
+// @@
+// @@   Request message for CudaSharedMemoryStatus.
+// @@
 type CudaSharedMemoryStatusRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2777,11 +2777,11 @@ func (x *CudaSharedMemoryStatusRequest) GetName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryStatusResponse
-//@@
-//@@   Response message for CudaSharedMemoryStatus.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryStatusResponse
+// @@
+// @@   Response message for CudaSharedMemoryStatus.
+// @@
 type CudaSharedMemoryStatusResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2835,11 +2835,11 @@ func (x *CudaSharedMemoryStatusResponse) GetRegions() map[string]*CudaSharedMemo
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryRegisterRequest
-//@@
-//@@   Request message for CudaSharedMemoryRegister.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryRegisterRequest
+// @@
+// @@   Request message for CudaSharedMemoryRegister.
+// @@
 type CudaSharedMemoryRegisterRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2928,11 +2928,11 @@ func (x *CudaSharedMemoryRegisterRequest) GetByteSize() uint64 {
 	return 0
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryRegisterResponse
-//@@
-//@@   Response message for CudaSharedMemoryRegister.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryRegisterResponse
+// @@
+// @@   Response message for CudaSharedMemoryRegister.
+// @@
 type CudaSharedMemoryRegisterResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2971,11 +2971,11 @@ func (*CudaSharedMemoryRegisterResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{38}
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryUnregisterRequest
-//@@
-//@@   Request message for CudaSharedMemoryUnregister.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryUnregisterRequest
+// @@
+// @@   Request message for CudaSharedMemoryUnregister.
+// @@
 type CudaSharedMemoryUnregisterRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3029,11 +3029,11 @@ func (x *CudaSharedMemoryUnregisterRequest) GetName() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message CudaSharedMemoryUnregisterResponse
-//@@
-//@@   Response message for CudaSharedMemoryUnregister.
-//@@
+// @@
+// @@.. cpp:var:: message CudaSharedMemoryUnregisterResponse
+// @@
+// @@   Response message for CudaSharedMemoryUnregister.
+// @@
 type CudaSharedMemoryUnregisterResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3072,11 +3072,11 @@ func (*CudaSharedMemoryUnregisterResponse) Descriptor() ([]byte, []int) {
 	return file_triton_proto_rawDescGZIP(), []int{40}
 }
 
-//@@
-//@@  .. cpp:var:: message TensorMetadata
-//@@
-//@@     Metadata for a tensor.
-//@@
+// @@
+// @@  .. cpp:var:: message TensorMetadata
+// @@
+// @@     Metadata for a tensor.
+// @@
 type ModelMetadataResponse_TensorMetadata struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3156,11 +3156,11 @@ func (x *ModelMetadataResponse_TensorMetadata) GetShape() []int64 {
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message InferInputTensor
-//@@
-//@@     An input tensor for an inference request.
-//@@
+// @@
+// @@  .. cpp:var:: message InferInputTensor
+// @@
+// @@     An input tensor for an inference request.
+// @@
 type ModelInferRequest_InferInputTensor struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3265,11 +3265,11 @@ func (x *ModelInferRequest_InferInputTensor) GetContents() *InferTensorContents 
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message InferRequestedOutputTensor
-//@@
-//@@     An output tensor requested for an inference request.
-//@@
+// @@
+// @@  .. cpp:var:: message InferRequestedOutputTensor
+// @@
+// @@     An output tensor requested for an inference request.
+// @@
 type ModelInferRequest_InferRequestedOutputTensor struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3334,11 +3334,11 @@ func (x *ModelInferRequest_InferRequestedOutputTensor) GetParameters() map[strin
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message InferOutputTensor
-//@@
-//@@     An output tensor returned for an inference request.
-//@@
+// @@
+// @@  .. cpp:var:: message InferOutputTensor
+// @@
+// @@     An output tensor returned for an inference request.
+// @@
 type ModelInferResponse_InferOutputTensor struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3443,11 +3443,11 @@ func (x *ModelInferResponse_InferOutputTensor) GetContents() *InferTensorContent
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message ModelIndex
-//@@
-//@@     Index entry for a model.
-//@@
+// @@
+// @@  .. cpp:var:: message ModelIndex
+// @@
+// @@     Index entry for a model.
+// @@
 type RepositoryIndexResponse_ModelIndex struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3538,11 +3538,11 @@ func (x *RepositoryIndexResponse_ModelIndex) GetReason() string {
 	return ""
 }
 
-//@@
-//@@  .. cpp:var:: message RegionStatus
-//@@
-//@@     Status for a shared memory region.
-//@@
+// @@
+// @@  .. cpp:var:: message RegionStatus
+// @@
+// @@     Status for a shared memory region.
+// @@
 type SystemSharedMemoryStatusResponse_RegionStatus struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3633,11 +3633,11 @@ func (x *SystemSharedMemoryStatusResponse_RegionStatus) GetByteSize() uint64 {
 	return 0
 }
 
-//@@
-//@@  .. cpp:var:: message RegionStatus
-//@@
-//@@     Status for a shared memory region.
-//@@
+// @@
+// @@  .. cpp:var:: message RegionStatus
+// @@
+// @@     Status for a shared memory region.
+// @@
 type CudaSharedMemoryStatusResponse_RegionStatus struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
