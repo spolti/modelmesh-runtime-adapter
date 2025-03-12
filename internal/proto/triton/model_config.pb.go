@@ -48,11 +48,11 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//@@
-//@@.. cpp:enum:: DataType
-//@@
-//@@   Data types supported for input and output tensors.
-//@@
+// @@
+// @@.. cpp:enum:: DataType
+// @@
+// @@   Data types supported for input and output tensors.
+// @@
 type DataType int32
 
 const (
@@ -149,11 +149,11 @@ func (DataType) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{0}
 }
 
-//@@
-//@@  .. cpp:enum:: Kind
-//@@
-//@@     Kind of this instance group.
-//@@
+// @@
+// @@  .. cpp:enum:: Kind
+// @@
+// @@     Kind of this instance group.
+// @@
 type ModelInstanceGroup_Kind int32
 
 const (
@@ -231,11 +231,11 @@ func (ModelInstanceGroup_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{1, 0}
 }
 
-//@@
-//@@  .. cpp:enum:: Format
-//@@
-//@@     The format for the input.
-//@@
+// @@
+// @@  .. cpp:enum:: Format
+// @@
+// @@     The format for the input.
+// @@
 type ModelInput_Format int32
 
 const (
@@ -305,11 +305,11 @@ func (ModelInput_Format) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{3, 0}
 }
 
-//@@
-//@@    .. cpp:enum:: Kind
-//@@
-//@@       The kind of the batch input.
-//@@
+// @@
+// @@    .. cpp:enum:: Kind
+// @@
+// @@       The kind of the batch input.
+// @@
 type BatchInput_Kind int32
 
 const (
@@ -391,11 +391,11 @@ func (BatchInput_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{5, 0}
 }
 
-//@@
-//@@  .. cpp:enum:: Kind
-//@@
-//@@     The kind of the batch output.
-//@@
+// @@
+// @@  .. cpp:enum:: Kind
+// @@
+// @@     The kind of the batch output.
+// @@
 type BatchOutput_Kind int32
 
 const (
@@ -445,13 +445,13 @@ func (BatchOutput_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{6, 0}
 }
 
-//@@
-//@@  .. cpp:enum:: ModelPriority
-//@@
-//@@     Model priorities. A model will be given scheduling and execution
-//@@     preference over models at lower priorities. Current model
-//@@     priorities only work for TensorRT models.
-//@@
+// @@
+// @@  .. cpp:enum:: ModelPriority
+// @@
+// @@     Model priorities. A model will be given scheduling and execution
+// @@     preference over models at lower priorities. Current model
+// @@     priorities only work for TensorRT models.
+// @@
 type ModelOptimizationPolicy_ModelPriority int32
 
 const (
@@ -513,11 +513,11 @@ func (ModelOptimizationPolicy_ModelPriority) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{8, 0}
 }
 
-//@@
-//@@  .. cpp:enum:: TimeoutAction
-//@@
-//@@     The action applied to timed-out requests.
-//@@
+// @@
+// @@  .. cpp:enum:: TimeoutAction
+// @@
+// @@     The action applied to timed-out requests.
+// @@
 type ModelQueuePolicy_TimeoutAction int32
 
 const (
@@ -575,11 +575,11 @@ func (ModelQueuePolicy_TimeoutAction) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{9, 0}
 }
 
-//@@
-//@@    .. cpp:enum:: Kind
-//@@
-//@@       The kind of the control.
-//@@
+// @@
+// @@    .. cpp:enum:: Kind
+// @@
+// @@       The kind of the control.
+// @@
 type ModelSequenceBatching_Control_Kind int32
 
 const (
@@ -664,13 +664,13 @@ func (ModelSequenceBatching_Control_Kind) EnumDescriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{11, 0, 0}
 }
 
-//@@
-//@@  .. cpp:var:: message ModelRateLimiter
-//@@
-//@@     The specifications required by the rate limiter to properly
-//@@     schedule the inference requests across the different models
-//@@     and their instances.
-//@@
+// @@
+// @@  .. cpp:var:: message ModelRateLimiter
+// @@
+// @@     The specifications required by the rate limiter to properly
+// @@     schedule the inference requests across the different models
+// @@     and their instances.
+// @@
 type ModelRateLimiter struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -740,12 +740,12 @@ func (x *ModelRateLimiter) GetPriority() uint32 {
 	return 0
 }
 
-//@@
-//@@.. cpp:var:: message ModelInstanceGroup
-//@@
-//@@   A group of one or more instances of a model and resources made
-//@@   available for those instances.
-//@@
+// @@
+// @@.. cpp:var:: message ModelInstanceGroup
+// @@
+// @@   A group of one or more instances of a model and resources made
+// @@   available for those instances.
+// @@
 type ModelInstanceGroup struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -876,11 +876,11 @@ func (x *ModelInstanceGroup) GetProfile() []string {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelTensorReshape
-//@@
-//@@   Reshape specification for input and output tensors.
-//@@
+// @@
+// @@.. cpp:var:: message ModelTensorReshape
+// @@
+// @@   Reshape specification for input and output tensors.
+// @@
 type ModelTensorReshape struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -932,11 +932,11 @@ func (x *ModelTensorReshape) GetShape() []int64 {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelInput
-//@@
-//@@   An input required by the model.
-//@@
+// @@
+// @@.. cpp:var:: message ModelInput
+// @@
+// @@   An input required by the model.
+// @@
 type ModelInput struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1072,11 +1072,11 @@ func (x *ModelInput) GetAllowRaggedBatch() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message ModelOutput
-//@@
-//@@   An output produced by the model.
-//@@
+// @@
+// @@.. cpp:var:: message ModelOutput
+// @@
+// @@   An output produced by the model.
+// @@
 type ModelOutput struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1195,11 +1195,11 @@ func (x *ModelOutput) GetIsShapeTensor() bool {
 	return false
 }
 
-//@@  .. cpp:var:: message BatchInput
-//@@
-//@@     A batch input is an additional input that must be added by
-//@@     the backend based on all the requests in a batch.
-//@@
+// @@  .. cpp:var:: message BatchInput
+// @@
+// @@     A batch input is an additional input that must be added by
+// @@     the backend based on all the requests in a batch.
+// @@
 type BatchInput struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1291,11 +1291,11 @@ func (x *BatchInput) GetSourceInput() []string {
 	return nil
 }
 
-//@@.. cpp:var:: message BatchOutput
-//@@
-//@@   A batch output is an output produced by the model that must be handled
-//@@   differently by the backend based on all the requests in a batch.
-//@@
+// @@.. cpp:var:: message BatchOutput
+// @@
+// @@   A batch output is an output produced by the model that must be handled
+// @@   differently by the backend based on all the requests in a batch.
+// @@
 type BatchOutput struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1373,12 +1373,12 @@ func (x *BatchOutput) GetSourceInput() []string {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelVersionPolicy
-//@@
-//@@   Policy indicating which versions of a model should be made
-//@@   available by the inference server.
-//@@
+// @@
+// @@.. cpp:var:: message ModelVersionPolicy
+// @@
+// @@   Policy indicating which versions of a model should be made
+// @@   available by the inference server.
+// @@
 type ModelVersionPolicy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1491,13 +1491,13 @@ func (*ModelVersionPolicy_All_) isModelVersionPolicy_PolicyChoice() {}
 
 func (*ModelVersionPolicy_Specific_) isModelVersionPolicy_PolicyChoice() {}
 
-//@@
-//@@.. cpp:var:: message ModelOptimizationPolicy
-//@@
-//@@   Optimization settings for a model. These settings control if/how a
-//@@   model is optimized and prioritized by the backend framework when
-//@@   it is loaded.
-//@@
+// @@
+// @@.. cpp:var:: message ModelOptimizationPolicy
+// @@
+// @@   Optimization settings for a model. These settings control if/how a
+// @@   model is optimized and prioritized by the backend framework when
+// @@   it is loaded.
+// @@
 type ModelOptimizationPolicy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1613,11 +1613,11 @@ func (x *ModelOptimizationPolicy) GetOutputPinnedMemory() *ModelOptimizationPoli
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelQueuePolicy
-//@@
-//@@   Queue policy for inference requests.
-//@@
+// @@
+// @@.. cpp:var:: message ModelQueuePolicy
+// @@
+// @@   Queue policy for inference requests.
+// @@
 type ModelQueuePolicy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1717,12 +1717,12 @@ func (x *ModelQueuePolicy) GetMaxQueueSize() uint32 {
 	return 0
 }
 
-//@@
-//@@.. cpp:var:: message ModelDynamicBatching
-//@@
-//@@   Dynamic batching configuration. These settings control how dynamic
-//@@   batching operates for the model.
-//@@
+// @@
+// @@.. cpp:var:: message ModelDynamicBatching
+// @@
+// @@   Dynamic batching configuration. These settings control how dynamic
+// @@   batching operates for the model.
+// @@
 type ModelDynamicBatching struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1870,12 +1870,12 @@ func (x *ModelDynamicBatching) GetPriorityQueuePolicy() map[uint32]*ModelQueuePo
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelSequenceBatching
-//@@
-//@@   Sequence batching configuration. These settings control how sequence
-//@@   batching operates for the model.
-//@@
+// @@
+// @@.. cpp:var:: message ModelSequenceBatching
+// @@
+// @@   Sequence batching configuration. These settings control how sequence
+// @@   batching operates for the model.
+// @@
 type ModelSequenceBatching struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2002,12 +2002,12 @@ func (*ModelSequenceBatching_Direct) isModelSequenceBatching_StrategyChoice() {}
 
 func (*ModelSequenceBatching_Oldest) isModelSequenceBatching_StrategyChoice() {}
 
-//@@
-//@@.. cpp:var:: message ModelEnsembling
-//@@
-//@@   Model ensembling configuration. These settings specify the models that
-//@@   compose the ensemble and how data flows between the models.
-//@@
+// @@
+// @@.. cpp:var:: message ModelEnsembling
+// @@
+// @@   Model ensembling configuration. These settings specify the models that
+// @@   compose the ensemble and how data flows between the models.
+// @@
 type ModelEnsembling struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2059,11 +2059,11 @@ func (x *ModelEnsembling) GetStep() []*ModelEnsembling_Step {
 	return nil
 }
 
-//@@
-//@@.. cpp:var:: message ModelParameter
-//@@
-//@@   A model parameter.
-//@@
+// @@
+// @@.. cpp:var:: message ModelParameter
+// @@
+// @@   A model parameter.
+// @@
 type ModelParameter struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2115,11 +2115,11 @@ func (x *ModelParameter) GetStringValue() string {
 	return ""
 }
 
-//@@
-//@@.. cpp:var:: message ModelWarmup
-//@@
-//@@   Settings used to construct the request sample for model warmup.
-//@@
+// @@
+// @@.. cpp:var:: message ModelWarmup
+// @@
+// @@   Settings used to construct the request sample for model warmup.
+// @@
 type ModelWarmup struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2199,11 +2199,11 @@ func (x *ModelWarmup) GetInputs() map[string]*ModelWarmup_Input {
 	return nil
 }
 
-//@@
-//@@ .. cpp:var:: message ModelOperations
-//@@
-//@@    The metadata of libraries providing custom operations for this model.
-//@@
+// @@
+// @@ .. cpp:var:: message ModelOperations
+// @@
+// @@    The metadata of libraries providing custom operations for this model.
+// @@
 type ModelOperations struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2256,12 +2256,12 @@ func (x *ModelOperations) GetOpLibraryFilename() []string {
 	return nil
 }
 
-//@@
-//@@ .. cpp:var:: message ModelTransactionPolicy
-//@@
-//@@    The specification that describes the nature of transactions
-//@@    to be expected from the model.
-//@@
+// @@
+// @@ .. cpp:var:: message ModelTransactionPolicy
+// @@
+// @@    The specification that describes the nature of transactions
+// @@    to be expected from the model.
+// @@
 type ModelTransactionPolicy struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2318,11 +2318,11 @@ func (x *ModelTransactionPolicy) GetDecoupled() bool {
 	return false
 }
 
-//@@
-//@@.. cpp:var:: message ModelConfig
-//@@
-//@@   A model configuration.
-//@@
+// @@
+// @@.. cpp:var:: message ModelConfig
+// @@
+// @@   A model configuration.
+// @@
 type ModelConfig struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2700,10 +2700,10 @@ func (*ModelConfig_SequenceBatching) isModelConfig_SchedulingChoice() {}
 
 func (*ModelConfig_EnsembleScheduling) isModelConfig_SchedulingChoice() {}
 
-//@@  .. cpp:var:: message Resource
-//@@
-//@@     The resource property.
-//@@
+// @@  .. cpp:var:: message Resource
+// @@
+// @@     The resource property.
+// @@
 type ModelRateLimiter_Resource struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2783,11 +2783,11 @@ func (x *ModelRateLimiter_Resource) GetCount() uint32 {
 	return 0
 }
 
-//@@  .. cpp:var:: message Latest
-//@@
-//@@     Serve only the latest version(s) of a model. This is
-//@@     the default policy.
-//@@
+// @@  .. cpp:var:: message Latest
+// @@
+// @@     Serve only the latest version(s) of a model. This is
+// @@     the default policy.
+// @@
 type ModelVersionPolicy_Latest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2842,10 +2842,10 @@ func (x *ModelVersionPolicy_Latest) GetNumVersions() uint32 {
 	return 0
 }
 
-//@@  .. cpp:var:: message All
-//@@
-//@@     Serve all versions of the model.
-//@@
+// @@  .. cpp:var:: message All
+// @@
+// @@     Serve all versions of the model.
+// @@
 type ModelVersionPolicy_All struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2884,10 +2884,10 @@ func (*ModelVersionPolicy_All) Descriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{7, 1}
 }
 
-//@@  .. cpp:var:: message Specific
-//@@
-//@@     Serve only specific versions of the model.
-//@@
+// @@  .. cpp:var:: message Specific
+// @@
+// @@     Serve only specific versions of the model.
+// @@
 type ModelVersionPolicy_Specific struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2939,16 +2939,16 @@ func (x *ModelVersionPolicy_Specific) GetVersions() []int64 {
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message Graph
-//@@
-//@@     Enable generic graph optimization of the model. If not specified
-//@@     the framework's default level of optimization is used. Supports
-//@@     TensorFlow graphdef and savedmodel and Onnx models. For TensorFlow
-//@@     causes XLA to be enabled/disabled for the model. For Onnx defaults
-//@@     to enabling all optimizations, -1 enables only basic optimizations,
-//@@     +1 enables only basic and extended optimizations.
-//@@
+// @@
+// @@  .. cpp:var:: message Graph
+// @@
+// @@     Enable generic graph optimization of the model. If not specified
+// @@     the framework's default level of optimization is used. Supports
+// @@     TensorFlow graphdef and savedmodel and Onnx models. For TensorFlow
+// @@     causes XLA to be enabled/disabled for the model. For Onnx defaults
+// @@     to enabling all optimizations, -1 enables only basic optimizations,
+// @@     +1 enables only basic and extended optimizations.
+// @@
 type ModelOptimizationPolicy_Graph struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3005,11 +3005,11 @@ func (x *ModelOptimizationPolicy_Graph) GetLevel() int32 {
 	return 0
 }
 
-//@@
-//@@  .. cpp:var:: message Cuda
-//@@
-//@@     CUDA-specific optimization settings.
-//@@
+// @@
+// @@  .. cpp:var:: message Cuda
+// @@
+// @@     CUDA-specific optimization settings.
+// @@
 type ModelOptimizationPolicy_Cuda struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3093,22 +3093,22 @@ func (x *ModelOptimizationPolicy_Cuda) GetGraphSpec() []*ModelOptimizationPolicy
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message ExecutionAccelerators
-//@@
-//@@     Specify the preferred execution accelerators to be used to execute
-//@@     the model. Currently only recognized by ONNX Runtime backend and
-//@@     TensorFlow backend.
-//@@
-//@@     For ONNX Runtime backend, it will deploy the model with the execution
-//@@     accelerators by priority, the priority is determined based on the
-//@@     order that they are set, i.e. the provider at the front has highest
-//@@     priority. Overall, the priority will be in the following order:
-//@@         <gpu_execution_accelerator> (if instance is on GPU)
-//@@         CUDA Execution Provider     (if instance is on GPU)
-//@@         <cpu_execution_accelerator>
-//@@         Default CPU Execution Provider
-//@@
+// @@
+// @@  .. cpp:var:: message ExecutionAccelerators
+// @@
+// @@     Specify the preferred execution accelerators to be used to execute
+// @@     the model. Currently only recognized by ONNX Runtime backend and
+// @@     TensorFlow backend.
+// @@
+// @@     For ONNX Runtime backend, it will deploy the model with the execution
+// @@     accelerators by priority, the priority is determined based on the
+// @@     order that they are set, i.e. the provider at the front has highest
+// @@     priority. Overall, the priority will be in the following order:
+// @@         <gpu_execution_accelerator> (if instance is on GPU)
+// @@         CUDA Execution Provider     (if instance is on GPU)
+// @@         <cpu_execution_accelerator>
+// @@         Default CPU Execution Provider
+// @@
 type ModelOptimizationPolicy_ExecutionAccelerators struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3210,19 +3210,19 @@ func (x *ModelOptimizationPolicy_ExecutionAccelerators) GetCpuExecutionAccelerat
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message PinnedMemoryBuffer
-//@@
-//@@     Specify whether to use a pinned memory buffer when transferring data
-//@@     between non-pinned system memory and GPU memory. Using a pinned
-//@@     memory buffer for system from/to GPU transfers will typically provide
-//@@     increased performance. For example, in the common use case where the
-//@@     request provides inputs and delivers outputs via non-pinned system
-//@@     memory, if the model instance accepts GPU IOs, the inputs will be
-//@@     processed by two copies: from non-pinned system memory to pinned
-//@@     memory, and from pinned memory to GPU memory. Similarly, pinned
-//@@     memory will be used for delivering the outputs.
-//@@
+// @@
+// @@  .. cpp:var:: message PinnedMemoryBuffer
+// @@
+// @@     Specify whether to use a pinned memory buffer when transferring data
+// @@     between non-pinned system memory and GPU memory. Using a pinned
+// @@     memory buffer for system from/to GPU transfers will typically provide
+// @@     increased performance. For example, in the common use case where the
+// @@     request provides inputs and delivers outputs via non-pinned system
+// @@     memory, if the model instance accepts GPU IOs, the inputs will be
+// @@     processed by two copies: from non-pinned system memory to pinned
+// @@     memory, and from pinned memory to GPU memory. Similarly, pinned
+// @@     memory will be used for delivering the outputs.
+// @@
 type ModelOptimizationPolicy_PinnedMemoryBuffer struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3274,10 +3274,10 @@ func (x *ModelOptimizationPolicy_PinnedMemoryBuffer) GetEnable() bool {
 	return false
 }
 
-//@@    .. cpp:var:: message GraphSpec
-//@@
-//@@       Specification of the CUDA graph to be captured.
-//@@
+// @@    .. cpp:var:: message GraphSpec
+// @@
+// @@       Specification of the CUDA graph to be captured.
+// @@
 type ModelOptimizationPolicy_Cuda_GraphSpec struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3365,10 +3365,10 @@ func (x *ModelOptimizationPolicy_Cuda_GraphSpec) GetGraphLowerBound() *ModelOpti
 	return nil
 }
 
-//@@      .. cpp:var:: message Dims
-//@@
-//@@         Specification of tensor dimension.
-//@@
+// @@      .. cpp:var:: message Dims
+// @@
+// @@         Specification of tensor dimension.
+// @@
 type ModelOptimizationPolicy_Cuda_GraphSpec_Shape struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3486,13 +3486,13 @@ func (x *ModelOptimizationPolicy_Cuda_GraphSpec_LowerBound) GetInput() map[strin
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message Accelerator
-//@@
-//@@     Specify the accelerator to be used to execute the model.
-//@@     Accelerator with the same name may accept different parameters
-//@@     depending on the backends.
-//@@
+// @@
+// @@  .. cpp:var:: message Accelerator
+// @@
+// @@     Specify the accelerator to be used to execute the model.
+// @@     Accelerator with the same name may accept different parameters
+// @@     depending on the backends.
+// @@
 type ModelOptimizationPolicy_ExecutionAccelerators_Accelerator struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3556,11 +3556,11 @@ func (x *ModelOptimizationPolicy_ExecutionAccelerators_Accelerator) GetParameter
 	return nil
 }
 
-//@@  .. cpp:var:: message Control
-//@@
-//@@     A control is a signal that the sequence batcher uses to
-//@@     communicate with a backend.
-//@@
+// @@  .. cpp:var:: message Control
+// @@
+// @@     A control is a signal that the sequence batcher uses to
+// @@     communicate with a backend.
+// @@
 type ModelSequenceBatching_Control struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3656,10 +3656,10 @@ func (x *ModelSequenceBatching_Control) GetDataType() DataType {
 	return DataType_TYPE_INVALID
 }
 
-//@@  .. cpp:var:: message ControlInput
-//@@
-//@@     The sequence control values to communicate by a model input.
-//@@
+// @@  .. cpp:var:: message ControlInput
+// @@
+// @@     The sequence control values to communicate by a model input.
+// @@
 type ModelSequenceBatching_ControlInput struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3724,14 +3724,14 @@ func (x *ModelSequenceBatching_ControlInput) GetControl() []*ModelSequenceBatchi
 	return nil
 }
 
-//@@  .. cpp:var:: message StrategyDirect
-//@@
-//@@     The sequence batcher uses a specific, unique batch
-//@@     slot for each sequence. All inference requests in a
-//@@     sequence are directed to the same batch slot in the same
-//@@     model instance over the lifetime of the sequence. This
-//@@     is the default strategy.
-//@@
+// @@  .. cpp:var:: message StrategyDirect
+// @@
+// @@     The sequence batcher uses a specific, unique batch
+// @@     slot for each sequence. All inference requests in a
+// @@     sequence are directed to the same batch slot in the same
+// @@     model instance over the lifetime of the sequence. This
+// @@     is the default strategy.
+// @@
 type ModelSequenceBatching_StrategyDirect struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3770,17 +3770,17 @@ func (*ModelSequenceBatching_StrategyDirect) Descriptor() ([]byte, []int) {
 	return file_model_config_proto_rawDescGZIP(), []int{11, 2}
 }
 
-//@@  .. cpp:var:: message StrategyOldest
-//@@
-//@@     The sequence batcher maintains up to 'max_candidate_sequences'
-//@@     candidate sequences. 'max_candidate_sequences' can be greater
-//@@     than the model's 'max_batch_size'. For inferencing the batcher
-//@@     chooses from the candidate sequences up to 'max_batch_size'
-//@@     inference requests. Requests are chosen in an oldest-first
-//@@     manner across all candidate sequences. A given sequence is
-//@@     not guaranteed to be assigned to the same batch slot for
-//@@     all inference requests of that sequence.
-//@@
+// @@  .. cpp:var:: message StrategyOldest
+// @@
+// @@     The sequence batcher maintains up to 'max_candidate_sequences'
+// @@     candidate sequences. 'max_candidate_sequences' can be greater
+// @@     than the model's 'max_batch_size'. For inferencing the batcher
+// @@     chooses from the candidate sequences up to 'max_batch_size'
+// @@     inference requests. Requests are chosen in an oldest-first
+// @@     manner across all candidate sequences. A given sequence is
+// @@     not guaranteed to be assigned to the same batch slot for
+// @@     all inference requests of that sequence.
+// @@
 type ModelSequenceBatching_StrategyOldest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3865,12 +3865,12 @@ func (x *ModelSequenceBatching_StrategyOldest) GetMaxQueueDelayMicroseconds() ui
 	return 0
 }
 
-//@@  .. cpp:var:: message Step
-//@@
-//@@     Each step specifies a model included in the ensemble,
-//@@     maps ensemble tensor names to the model input tensors,
-//@@     and maps model output tensors to ensemble tensor names
-//@@
+// @@  .. cpp:var:: message Step
+// @@
+// @@     Each step specifies a model included in the ensemble,
+// @@     maps ensemble tensor names to the model input tensors,
+// @@     and maps model output tensors to ensemble tensor names
+// @@
 type ModelEnsembling_Step struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -3967,11 +3967,11 @@ func (x *ModelEnsembling_Step) GetOutputMap() map[string]string {
 	return nil
 }
 
-//@@
-//@@  .. cpp:var:: message Input
-//@@
-//@@     Meta data associated with an input.
-//@@
+// @@
+// @@  .. cpp:var:: message Input
+// @@
+// @@     Meta data associated with an input.
+// @@
 type ModelWarmup_Input struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
