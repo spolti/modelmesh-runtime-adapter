@@ -22,9 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-//
 // ServerLive messages.
-//
 type ServerLiveRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -111,9 +109,7 @@ func (x *ServerLiveResponse) GetLive() bool {
 	return false
 }
 
-//
 // ServerReady messages.
-//
 type ServerReadyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -200,9 +196,7 @@ func (x *ServerReadyResponse) GetReady() bool {
 	return false
 }
 
-//
 // ModelReady messages.
-//
 type ModelReadyRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -309,9 +303,7 @@ func (x *ModelReadyResponse) GetReady() bool {
 	return false
 }
 
-//
 // ServerMetadata messages.
-//
 type ServerMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -416,9 +408,7 @@ func (x *ServerMetadataResponse) GetExtensions() []string {
 	return nil
 }
 
-//
 // ModelMetadata messages.
-//
 type ModelMetadataRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -571,9 +561,7 @@ func (x *ModelMetadataResponse) GetParameters() map[string]*InferParameter {
 	return nil
 }
 
-//
 // ModelInfer messages.
-//
 type ModelInferRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -804,9 +792,7 @@ func (x *ModelInferResponse) GetRawOutputContents() [][]byte {
 	return nil
 }
 
-//
 // An inference parameter value.
-//
 type InferParameter struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -907,12 +893,10 @@ func (*InferParameter_Int64Param) isInferParameter_ParameterChoice() {}
 
 func (*InferParameter_StringParam) isInferParameter_ParameterChoice() {}
 
-//
 // The data contained in a tensor. For a given data type the
 // tensor contents can be represented in "raw" bytes form or in
 // the repeated type that matches the tensor's data type. Protobuf
 // oneof is not used because oneofs cannot contain repeated fields.
-//
 type InferTensorContents struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
