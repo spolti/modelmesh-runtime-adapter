@@ -2,7 +2,7 @@
 #ARG BUILD_BASE=develop
 
 #go-1.21
-FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi8/go-toolset:1.21@sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 AS build
+FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi8/go-toolset:1.21@sha256:4ec05fd5b355106cc0d990021a05b71bbfb9231e4f5bdc0c5316515edf6a1c96 AS build
 
 #FROM --platform=$BUILDPLATFORM $BUILD_BASE AS build
 
