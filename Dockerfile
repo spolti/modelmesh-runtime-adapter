@@ -16,6 +16,7 @@
 # Stage 1: Create the developer image for the BUILDPLATFORM only
 ###############################################################################
 ARG GOLANG_VERSION=1.22
+ARG BUILD_BASE=develop
 FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi9/go-toolset:$GOLANG_VERSION AS develop
 
 ARG PROTOC_VERSION=21.5
@@ -30,7 +31,7 @@ RUN --mount=type=cache,target=/root/.cache/dnf:rw \
         nodejs \
         python3.11 \
         python3.11-pip \
-    && alternatives --install /usr/bin/python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
     && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
@@ -161,7 +162,7 @@ RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
        python3.11-devel \
        python3.11 \
        python3.11-pip \
-    && alternatives --install /usr/bin/python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
     && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
