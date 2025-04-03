@@ -4,7 +4,8 @@ contentOrigin:
 packages:
   - gcc
   - gcc-c++
-  - python38
-  - python38-devel
-  - nodejs
-  - glibc-minimal-langpack
+  - python3.11
+  - python3.11-devel
+  - python3.11-pip
+context:
+  containerfile: ./Dockerfile.konflux
