@@ -15,9 +15,9 @@
 ###############################################################################
 # Stage 1: Create the developer image for the BUILDPLATFORM only
 ###############################################################################
-ARG GOLANG_VERSION=1.21
+ARG GOLANG_VERSION=1.22
 ARG BUILD_BASE=develop
-FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi8/go-toolset:$GOLANG_VERSION AS develop
+FROM --platform=$BUILDPLATFORM registry.access.redhat.com/ubi9/go-toolset:$GOLANG_VERSION AS develop
 
 ARG PROTOC_VERSION=21.5
 
@@ -28,11 +28,11 @@ ENV HOME=/root
 # NOTE: Require python311 to install pre-commit
 RUN --mount=type=cache,target=/root/.cache/dnf:rw \
     dnf install --setopt=cachedir=/root/.cache/dnf -y --nodocs \
-        nodejs \
-        python3.11 \
-        python3.11-pip \
-    && ln -sf /usr/bin/python3 /usr/bin/python \
-    && ln -sf /usr/bin/pip3 /usr/bin/pip \
+    nodejs \
+    python3.11 \
+    python3.11-pip \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
 # Install pre-commit
@@ -90,7 +90,7 @@ ENV PATH $GOPATH/bin:$PATH
 RUN true \
     && go get google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     && go install google.golang.org/protobuf/cmd/protoc-gen-go \
-                  google.golang.org/grpc/cmd/protoc-gen-go-grpc \
+    google.golang.org/grpc/cmd/protoc-gen-go-grpc \
     && protoc-gen-go --version \
     && true
 
@@ -147,7 +147,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 ###############################################################################
 # Stage 3: Copy build assets to create the smallest final runtime image
 ###############################################################################
-FROM registry.access.redhat.com/ubi8/ubi-minimal:latest as runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest as runtime
 
 ARG USER=2000
 
@@ -156,14 +156,14 @@ USER root
 # install python to convert keras to tf
 # NOTE: tensorflow not supported on PowerPC (ppc64le) or System Z (s390x) https://github.com/tensorflow/tensorflow/issues/46181
 RUN --mount=type=cache,target=/root/.cache/microdnf:rw \
-    microdnf install --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-8-appstream-rpms.module_hotfixes=1 \
-       gcc \
-       gcc-c++ \
-       python3.11-devel \
-       python3.11 \
-       python3.11-pip \
-    && ln -sf /usr/bin/python3 /usr/bin/python \
-    && ln -sf /usr/bin/pip3 /usr/bin/pip \
+    microdnf install -y --setopt=cachedir=/root/.cache/microdnf --setopt=ubi-9-appstream-rpms.module_hotfixes=1 \
+    gcc \
+    gcc-c++ \
+    python3.11-devel \
+    python3.11 \
+    python3.11-pip \
+    && alternatives --install /usr/bin/unversioned-python python /usr/bin/python3.11 1 \
+    && alternatives --install /usr/bin/pip pip /usr/bin/pip3.11 1 \
     && true
 
 # need to upgrade pip and install wheel before installing grpcio, before installing tensorflow on aarch64
@@ -192,10 +192,10 @@ ARG IMAGE_VERSION
 ARG COMMIT_SHA
 
 LABEL name="model-serving-runtime-adapter" \
-      version="${IMAGE_VERSION}" \
-      release="${COMMIT_SHA}" \
-      summary="Sidecar container which runs in the ModelMesh Serving model server pods" \
-      description="Container which runs in each model serving pod acting as an intermediary between ModelMesh and third-party model-server containers"
+    version="${IMAGE_VERSION}" \
+    release="${COMMIT_SHA}" \
+    summary="Sidecar container which runs in the ModelMesh Serving model server pods" \
+    description="Container which runs in each model serving pod acting as an intermediary between ModelMesh and third-party model-server containers"
 
 # Don't define an entrypoint. This is a multi-purpose image so the user should specify which binary they want to run (e.g. /opt/app/puller or /opt/app/triton-adapter)
 # ENTRYPOINT ["/opt/app/puller"]
