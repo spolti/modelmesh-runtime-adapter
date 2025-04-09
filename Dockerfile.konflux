@@ -2,7 +2,7 @@
 ###############################################################################
 # Stage 1: Build the assets
 ###############################################################################
-FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi9/go-toolset:1.22@sha256:e4193e71ea9f2e2504f6b4ee93cadef0fe5d7b37bba57484f4d4229801a7c063 AS build
+FROM --platform=$BUILDPLATFORM registry.redhat.io/ubi8/go-toolset:1.22@sha256:f9e02daed92706e91af576e4858f09f76be7b8a35c66a554337209c694beb125 AS build
 
 LABEL image="build"
 
